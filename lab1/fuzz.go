@@ -148,7 +148,3 @@ func fuzzTest(trials int, showFailures int) {
 	}
 	fmt.Printf("Кол-во тестов: %d\nУспех: %d\nОшибки: %d\n", success+fail, success, fail)
 }
-
-func main() {
-	fuzzTest(1000, 5)
-}
