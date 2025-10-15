@@ -74,13 +74,13 @@ bpb-->abapba
 abapba-->abaababa
 bpb-->babab
 ```
-$w \to v_1, v_1 = babab$ при применении правила $\texttt{bpb} \to \texttt{abapba}$
-$w \to v_2, v_2 = abaababa$ при применении правила $\texttt{p} \to \texttt{aba}$. 
+$w \to v_1, v_1 = babab$ при применении правила $\texttt{p} \to \texttt{aba}$
+$w \to v_2, v_2 = abaababa$ при применении правила $\texttt{bpb} \to \texttt{abapba}$. 
 
 **Локальной конфлюэнтности нет**, так как $v_1$ и $v_2$ являются нормальными формами (не содержат редексов).
 
 ### 4. Пополняемость по Кнуту-Бендиксу
-По алгоритму Кнтуа-Бендикса, добавляем правило по критической паре из правил $\texttt{p} \to \texttt{aba}$ и $\texttt{apa} \to \texttt{bb}$:
+По алгоритму Кнута-Бендикса, добавляем правило по критической паре из правил $\texttt{p} \to \texttt{aba}$ и $\texttt{apa} \to \texttt{bb}$:
 
 * $\texttt{aabaa} \to \texttt{bb}$
 
