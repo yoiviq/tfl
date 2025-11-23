@@ -1,0 +1,57 @@
+digraph AFA {
+    rankdir=LR;
+    node [shape=doublecircle];
+    q7; qf;
+
+    node [shape=circle];
+    start [shape=point];
+    start -> u;
+
+    u -> q0 [label="ε"];
+    u -> 0 [label="ε"];
+
+    q0 -> q1 [label="a"];
+    q0 -> q3 [label="b"];
+
+    q1 -> q2 [label="b"];
+    q1 -> q0 [label="c"];
+
+    q2 -> q0 [label="c"];
+
+    q3 -> q4 [label="a"];
+    q3 -> q0 [label="c"];
+
+    q4 -> q0 [label="c"];  
+
+    q4 -> q5 [label="a,b,c"]; 
+    q5 -> q6 [label="a,b"];    
+    q6 -> q7 [label="b,c"];
+
+
+    0  -> 0 [label="a"];
+    0  -> 0 [label="b"];
+    0  -> 0 [label="c"];
+
+    0  -> a [label="a"];
+    0  -> b [label="b"];
+    0  -> c [label="c"];
+
+    a -> qf [label="b, c"]
+    b -> qf [label="b, c"]
+    
+    c -> b [label="b"]
+    c -> a [label="a"]
+    c -> c [label="c"]
+
+    b -> a [label="a"]
+    b -> b [label="b"]
+
+    a -> a [label="a"]
+    a -> b [label="b"]
+    a -> c [label="c"]
+
+    qf -> a [label="a"]
+    qf -> b [label="b"]
+    qf -> c [label="c"]
+   
+}
