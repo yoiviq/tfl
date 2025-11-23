@@ -1,0 +1,82 @@
+digraph AFA {
+    rankdir=LR;
+    node [shape=doublecircle];
+    q7; ab; ac; bb; bc;
+
+    node [shape=circle];
+    start [shape=point];
+    start -> u;
+
+    u -> q0 [label="ε"];
+    u -> 0 [label="ε"];
+
+    q0 -> q1 [label="a"];
+    q0 -> q3 [label="b"];
+
+    q1 -> q2 [label="b"];
+    q1 -> q0 [label="c"];
+
+    q2 -> q0 [label="c"];
+
+    q3 -> q4 [label="a"];
+    q3 -> q0 [label="c"];
+
+    q4 -> q0 [label="c"];  
+
+    q4 -> q5 [label="a,b,c"]; 
+    q5 -> q6 [label="a,b"];    
+    q6 -> q7 [label="b,c"];
+
+
+    0  -> a [label="a"];
+    0  -> b [label="b"];
+    0  -> c [label="c"];
+
+    a  -> aa [label="a"];
+    a  -> ab [label="b"];
+    a  -> ac [label="c"];
+
+    b  -> ba [label="a"];
+    b  -> bb [label="b"];
+    b  -> bc [label="c"];
+
+    c  -> ca [label="a"];
+    c  -> cb [label="b"];
+    c  -> cc [label="c"];
+
+    aa -> aa [label="a"];
+    aa -> ab [label="b"];
+    aa -> ac [label="c"];
+
+    ab -> ba [label="a"];
+    ab -> bb [label="b"];
+    ab -> bc [label="c"];
+
+    ac -> ca [label="a"];
+    ac -> cb [label="b"];
+    ac -> cc [label="c"];
+
+    ba -> aa [label="a"];
+    ba -> ab [label="b"];
+    ba -> ac [label="c"];
+
+    bb -> ba [label="a"];
+    bb -> bb [label="b"];
+    bb -> bc [label="c"];
+
+    bc -> ca [label="a"];
+    bc -> cb [label="b"];
+    bc -> cc [label="c"];
+
+    ca -> aa [label="a"];
+    ca -> ab [label="b"];
+    ca -> ac [label="c"];
+
+    cb -> ba [label="a"];
+    cb -> bb [label="b"];
+    cb -> bc [label="c"];
+
+    cc -> ca [label="a"];
+    cc -> cb [label="b"];
+    cc -> cc [label="c"];
+}
