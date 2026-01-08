@@ -19,7 +19,6 @@ func DFA(word string) bool {
 		qDead = 13
 	)
 
-	// det[state][symbolIndex] = nextState
 	det := [][]int{
 		// a   b    c
 		/*q0*/ {q1, q2, qDead},

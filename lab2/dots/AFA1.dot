@@ -1,82 +1,83 @@
 digraph AFA {
-    rankdir=LR;
-    node [shape=doublecircle];
-    q7; ab; ac; bb; bc;
+  rankdir=LR;
+  splines=true;
+  compound=true;
+  nodesep=0.2;
+  ranksep=0.2;
 
-    node [shape=circle];
-    start [shape=point];
-    start -> u;
+  node [shape=doublecircle];
+  p7 p10 p11 p13;
+  _b _c;
 
-    u -> q0 [label="ε"];
-    u -> 0 [label="ε"];
+  node [shape=circle];
 
-    q0 -> q1 [label="a"];
-    q0 -> q3 [label="b"];
+  start [shape=point];
+  and [shape=box, label="&"];
 
-    q1 -> q2 [label="b"];
-    q1 -> q0 [label="c"];
+  start -> and;
 
-    q2 -> q0 [label="c"];
+  and -> p0 [label="ε"];
+  and -> 0  [label="ε"];
 
-    q3 -> q4 [label="a"];
-    q3 -> q0 [label="c"];
+  { rank=same; p0; 0; }
+  p0 -> 0 [style=invis, weight=50];
 
-    q4 -> q0 [label="c"];  
+  { rank=min; start; and; }
 
-    q4 -> q5 [label="a,b,c"]; 
-    q5 -> q6 [label="a,b"];    
-    q6 -> q7 [label="b,c"];
+  p0 p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12 p13;
+
+  p0  -> p1  [label="a"];
+  p0  -> p3  [label="b"];
+
+  p1  -> p2  [label="b"];
+  p1  -> p0  [label="c"];
+
+  p2  -> p0  [label="c"];
+
+  p3  -> p4  [label="a"];
+  p3  -> p0  [label="c"];
+
+  p4  -> p5  [label="a,b"];
+  p4  -> p8  [label="c"];
+
+  p5  -> p6  [label="a,b,c"];
+  p6  -> p7  [label="a,b,c"];
+
+  p8  -> p9  [label="a"];
+  p8  -> p12 [label="b"];
+  p8  -> p6  [label="c"];
+
+  p9  -> p7  [label="a"];
+  p9  -> p11 [label="b"];
+  p9  -> p10 [label="c"];
+
+  p10 -> p1  [label="a"];
+  p10 -> p3  [label="b"];
+
+  p11 -> p0  [label="c"];
+
+  p12 -> p13 [label="a"];
+  p12 -> p7  [label="b"];
+  p12 -> p10 [label="c"];
+
+  p13 -> p5  [label="a,b"];
+  p13 -> p8  [label="c"];
+
+  0 ab _b _c;
+
+  0  -> ab [label="a,b"];
+  0  -> 0  [label="c"];
+
+  ab -> _b [label="b"];
+  ab -> _c [label="c"];
+  ab -> ab [label="a"];
+
+  _b -> _b [label="b"];
+  _b -> ab [label="a"];
+  _b -> _c [label="c"];
+
+  _c -> ab [label="a,b"];
+  _c -> 0  [label="c"];
 
 
-    0  -> a [label="a"];
-    0  -> b [label="b"];
-    0  -> c [label="c"];
-
-    a  -> aa [label="a"];
-    a  -> ab [label="b"];
-    a  -> ac [label="c"];
-
-    b  -> ba [label="a"];
-    b  -> bb [label="b"];
-    b  -> bc [label="c"];
-
-    c  -> ca [label="a"];
-    c  -> cb [label="b"];
-    c  -> cc [label="c"];
-
-    aa -> aa [label="a"];
-    aa -> ab [label="b"];
-    aa -> ac [label="c"];
-
-    ab -> ba [label="a"];
-    ab -> bb [label="b"];
-    ab -> bc [label="c"];
-
-    ac -> ca [label="a"];
-    ac -> cb [label="b"];
-    ac -> cc [label="c"];
-
-    ba -> aa [label="a"];
-    ba -> ab [label="b"];
-    ba -> ac [label="c"];
-
-    bb -> ba [label="a"];
-    bb -> bb [label="b"];
-    bb -> bc [label="c"];
-
-    bc -> ca [label="a"];
-    bc -> cb [label="b"];
-    bc -> cc [label="c"];
-
-    ca -> aa [label="a"];
-    ca -> ab [label="b"];
-    ca -> ac [label="c"];
-
-    cb -> ba [label="a"];
-    cb -> bb [label="b"];
-    cb -> bc [label="c"];
-
-    cc -> ca [label="a"];
-    cc -> cb [label="b"];
-    cc -> cc [label="c"];
 }
