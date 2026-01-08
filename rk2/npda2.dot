@@ -1,0 +1,24 @@
+digraph DFA {
+  rankdir=LR;
+  node [shape=doublecircle]; end;
+  node [shape=circle];
+  S -> q0 [label="ε, ε/X"]
+  q0 -> a [label="a, ε/ε"];
+  q0 -> w1 [label="a, ε/A"];
+  q0 -> w1 [label="b, ε/ε"];
+  a  -> a [label="a, ε/ε"];
+  a -> end [label="ε, X/ε"]
+  w1 -> w1_a [label="a, ε/A"];
+  w1 -> w1 [label = "b, ε/ε"];
+  w1 -> w1_aN [label="a, ε/ε"];
+  w1 -> w2 [label="a, ε/ε"];
+  w1_a -> w1 [label="b, ε/ε"];
+  w1_a -> w1_aN [label="a, ε/ε"]
+  w1_aN -> w1_aN [label="a, ε/ε"]
+  w1_aN -> w2 [label="b, A/ε"]
+  w2 -> w2 [label="a, ε/ε"]
+  w2 -> end [label="ε, X/ε"]
+  w2 -> w2 [label="a, ε/ε"]
+
+
+}
