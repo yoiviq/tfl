@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"math/rand"
 	"strings"
-	"time"
 )
 
 var alphabet = []rune{'a', 'b', 'c'}
@@ -22,7 +21,6 @@ func makeRandomWord() string {
 }
 
 func main() {
-	rand.Seed(time.Now().UnixNano())
 
 	nonDet := buildNFA()
 	alt := buildAFA()
