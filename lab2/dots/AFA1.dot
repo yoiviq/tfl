@@ -1,0 +1,83 @@
+digraph AFA {
+  rankdir=LR;
+  splines=true;
+  compound=true;
+  nodesep=0.2;
+  ranksep=0.2;
+
+  node [shape=doublecircle];
+  p7 p10 p11 p13;
+  _b _c;
+
+  node [shape=circle];
+
+  start [shape=point];
+  and [shape=box, label="&"];
+
+  start -> and;
+
+  and -> p0 [label="ε"];
+  and -> 0  [label="ε"];
+
+  { rank=same; p0; 0; }
+  p0 -> 0 [style=invis, weight=50];
+
+  { rank=min; start; and; }
+
+  p0 p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12 p13;
+
+  p0  -> p1  [label="a"];
+  p0  -> p3  [label="b"];
+
+  p1  -> p2  [label="b"];
+  p1  -> p0  [label="c"];
+
+  p2  -> p0  [label="c"];
+
+  p3  -> p4  [label="a"];
+  p3  -> p0  [label="c"];
+
+  p4  -> p5  [label="a,b"];
+  p4  -> p8  [label="c"];
+
+  p5  -> p6  [label="a,b,c"];
+  p6  -> p7  [label="a,b,c"];
+
+  p8  -> p9  [label="a"];
+  p8  -> p12 [label="b"];
+  p8  -> p6  [label="c"];
+
+  p9  -> p7  [label="a"];
+  p9  -> p11 [label="b"];
+  p9  -> p10 [label="c"];
+
+  p10 -> p1  [label="a"];
+  p10 -> p3  [label="b"];
+
+  p11 -> p0  [label="c"];
+
+  p12 -> p13 [label="a"];
+  p12 -> p7  [label="b"];
+  p12 -> p10 [label="c"];
+
+  p13 -> p5  [label="a,b"];
+  p13 -> p8  [label="c"];
+
+  0 ab _b _c;
+
+  0  -> ab [label="a,b"];
+  0  -> 0  [label="c"];
+
+  ab -> _b [label="b"];
+  ab -> _c [label="c"];
+  ab -> ab [label="a"];
+
+  _b -> _b [label="b"];
+  _b -> ab [label="a"];
+  _b -> _c [label="c"];
+
+  _c -> ab [label="a,b"];
+  _c -> 0  [label="c"];
+
+
+}
