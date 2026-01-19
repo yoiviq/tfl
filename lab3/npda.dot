@@ -1,0 +1,22 @@
+digraph PDA {
+  rankdir=LR;
+  node [shape=circle, fontsize=12];
+
+  start [shape=point, label=""];
+
+  q0 [label="q0"];
+  end [shape=doublecircle, label="end"];
+
+  start -> q0  [label="ε, ε/QS"];
+
+  q0 -> q0 [label="a, a/ε
+  b, b/ε
+  a, S/b
+  b, T/b
+  a, T/bTS
+  b, T/T
+  b, S/aST"];
+
+  q0 -> end [label="ε, Q/ε"]
+
+}
