@@ -2,11 +2,11 @@
 
 Дана грамматика: 
 
-* $ S \to bTSa $
-* $ T \to aSTb $
-* $ S \to ab $
-* $ T \to bT $
-* $ T \to bb $
+$S \to bTSa $
+$T \to aSTb $
+$S \to ab $
+$ T \to bT $
+$T \to bb $
  
 #### Анализ на детерминизм
 
@@ -18,8 +18,9 @@
 
 Рассмотрим два слова с длинным общим префиксом:
 
-* $(ba)^{n}b~baab (bbbaba)^n$
-* $(ba)^{n}b~bbaba~(bbbaba)^{n}$
+$(ba)^{n}b~baab (bbbaba)^n$
+
+$(ba)^{n}b~bbaba~(bbbaba)^{n}$
 
 После прочтения общего префикса $(ba)^nb$, стек имеет вид $(aSbT)^naST$. 
 
@@ -43,27 +44,26 @@
 
 Для начала линеаризуем грамматику и построим $First$, $Follow$ и $Last$ множества
 
-* $S \to b_1TSa_1$
-* $T \to a_2STb_2$
-* $S \to a_3b_3$
-* $T \to b_4T$
-* $T \to b_5b_6$
+$S \to b_1TSa_1$
+$T \to a_2STb_2$
+$S \to a_3b_3$
+$T \to b_4T$
+$T \to b_5b_6$
 
 $$
-\begin{aligned}
-First(G) = \lbrace b_1, a_3 \rbrace \\
-Last(G) = \lbrace a_1, b_3 \rbrace
-\end{aligned}
+First(G) = \lbrace b_1, a_3 \rbrace \text{, } Last(G) = \lbrace a_1, b_3 \rbrace
 $$
 
 $$
-\begin{aligned}
-Follow(G) &= \bigl\{
-a_1a_1, a_1b_4, a_1b_5, b_1a_2, b_1b_4, b_1b_5, a_3b_3, a_2b_1, a_2a_3,\\
-&\qquad b_2b_1, b_2b_2, b_2a_3, b_4b_4, b_4b_5, b_4a_2, b_5b_6,\\
-&\qquad b_6b_1, b_6a_3, b_6b_2, b_3a_1, b_3a_2, b_3b_4, b_3b_5
-\bigr\}.
-\end{aligned}
+\begin{align*}
+\mathrm{Follow}(G)=\Bigl\{
+\substack{
+a_1a_1,\ a_1b_4,\ a_1b_5,\ b_1a_2,\ b_1b_4,\ b_1b_5,\ a_3b_3,\ a_2b_1,\ a_2a_3,\\
+b_2b_1,\ b_2b_2,\ b_2a_3,\ b_4b_4,\ b_4b_5,\ b_4a_2,\ b_5b_6,\\
+b_6b_1,\ b_6a_3,\ b_6b_2,\ b_3a_1,\ b_3a_2,\ b_3b_4,\ b_3b_5
+}
+\Bigr\}.
+\end{align*}
 $$
 
 Получаем $LL(1)$-аппроксимацию:
@@ -76,250 +76,7 @@ $$
 
 #### Правила из пересечения грамматики и LL(1)-аппроксимации
 
-$$
-\langle 0, S, 0 \rangle \to b \langle 2, T, 2 \rangle \langle 2, S, 2 \rangle a\\
-\langle 0, S, 0 \rangle \to b \langle 2, T, 6 \rangle \langle 6, S, 3 \rangle a\\
-\langle 0, S, 1 \rangle \to b \langle 2, T, 2 \rangle \langle 2, S, 0 \rangle a\\
-\langle 0, S, 1 \rangle \to b \langle 2, T, 5 \rangle \langle 5, S, 0 \rangle a\\
-\langle 0, S, 1 \rangle \to b \langle 2, T, 6 \rangle \langle 6, S, 0 \rangle a\\
-\langle 0, S, 3 \rangle \to a b\\
-\langle 0, S, 4 \rangle \to b \langle 2, T, 2 \rangle \langle 2, S, 4 \rangle a\\
-\langle 0, S, 4 \rangle \to b \langle 2, T, 5 \rangle \langle 5, S, 4 \rangle a\\
-\langle 0, S, 4 \rangle \to b \langle 2, T, 6 \rangle \langle 6, S, 3 \rangle a\\
-\langle 0, S, 4 \rangle \to b \langle 2, T, 6 \rangle \langle 6, S, 4 \rangle a\\
-\langle 0, T, 2 \rangle \to a \langle 1, S, 0 \rangle \langle 0, T, 2 \rangle b\\
-\langle 0, T, 2 \rangle \to a \langle 1, S, 0 \rangle \langle 0, T, 6 \rangle b\\
-\langle 0, T, 2 \rangle \to a \langle 1, S, 1 \rangle \langle 1, T, 2 \rangle b\\
-\langle 0, T, 2 \rangle \to a \langle 1, S, 1 \rangle \langle 1, T, 6 \rangle b\\
-\langle 0, T, 2 \rangle \to a \langle 1, S, 4 \rangle \langle 4, T, 2 \rangle b\\
-\langle 0, T, 2 \rangle \to a \langle 1, S, 4 \rangle \langle 4, T, 6 \rangle b\\
-\langle 0, T, 2 \rangle \to b \langle 2, T, 2 \rangle\\
-\langle 0, T, 2 \rangle \to b b\\
-\langle 0, T, 5 \rangle \to a \langle 1, S, 0 \rangle \langle 0, T, 2 \rangle b\\
-\langle 0, T, 5 \rangle \to a \langle 1, S, 1 \rangle \langle 1, T, 2 \rangle b\\
-\langle 0, T, 5 \rangle \to a \langle 1, S, 4 \rangle \langle 4, T, 2 \rangle b\\
-\langle 0, T, 5 \rangle \to b \langle 2, T, 5 \rangle\\
-\langle 0, T, 5 \rangle \to b b\\
-\langle 0, T, 6 \rangle \to a \langle 1, S, 0 \rangle \langle 0, T, 5 \rangle b\\
-\langle 0, T, 6 \rangle \to a \langle 1, S, 0 \rangle \langle 0, T, 6 \rangle b\\
-\langle 0, T, 6 \rangle \to a \langle 1, S, 1 \rangle \langle 1, T, 5 \rangle b\\
-\langle 0, T, 6 \rangle \to a \langle 1, S, 1 \rangle \langle 1, T, 6 \rangle b\\
-\langle 0, T, 6 \rangle \to a \langle 1, S, 4 \rangle \langle 4, T, 5 \rangle b\\
-\langle 0, T, 6 \rangle \to a \langle 1, S, 4 \rangle \langle 4, T, 6 \rangle b\\
-\langle 0, T, 6 \rangle \to b \langle 2, T, 6 \rangle\\
-\langle 1, S, 0 \rangle \to b \langle 3, T, 2 \rangle \langle 2, S, 2 \rangle a\\
-\langle 1, S, 0 \rangle \to b \langle 3, T, 6 \rangle \langle 6, S, 3 \rangle a\\
-\langle 1, S, 1 \rangle \to b \langle 3, T, 2 \rangle \langle 2, S, 0 \rangle a\\
-\langle 1, S, 1 \rangle \to b \langle 3, T, 5 \rangle \langle 5, S, 0 \rangle a\\
-\langle 1, S, 1 \rangle \to b \langle 3, T, 6 \rangle \langle 6, S, 0 \rangle a\\
-\langle 1, S, 4 \rangle \to b \langle 3, T, 2 \rangle \langle 2, S, 4 \rangle a\\
-\langle 1, S, 4 \rangle \to b \langle 3, T, 5 \rangle \langle 5, S, 4 \rangle a\\
-\langle 1, S, 4 \rangle \to b \langle 3, T, 6 \rangle \langle 6, S, 3 \rangle a\\
-\langle 1, S, 4 \rangle \to b \langle 3, T, 6 \rangle \langle 6, S, 4 \rangle a\\
-\langle 1, T, 2 \rangle \to b \langle 3, T, 2 \rangle\\
-\langle 1, T, 2 \rangle \to b b\\
-\langle 1, T, 5 \rangle \to b \langle 3, T, 5 \rangle\\
-\langle 1, T, 5 \rangle \to b b\\
-\langle 1, T, 6 \rangle \to b \langle 3, T, 6 \rangle\\
-\langle 2, S, 0 \rangle \to b \langle 2, T, 2 \rangle \langle 2, S, 2 \rangle a\\
-\langle 2, S, 0 \rangle \to b \langle 2, T, 6 \rangle \langle 6, S, 3 \rangle a\\
-\langle 2, S, 0 \rangle \to b \langle 5, T, 2 \rangle \langle 2, S, 2 \rangle a\\
-\langle 2, S, 0 \rangle \to b \langle 5, T, 6 \rangle \langle 6, S, 3 \rangle a\\
-\langle 2, S, 2 \rangle \to a b\\
-\langle 2, S, 4 \rangle \to b \langle 2, T, 2 \rangle \langle 2, S, 4 \rangle a\\
-\langle 2, S, 4 \rangle \to b \langle 2, T, 5 \rangle \langle 5, S, 4 \rangle a\\
-\langle 2, S, 4 \rangle \to b \langle 2, T, 6 \rangle \langle 6, S, 3 \rangle a\\
-\langle 2, S, 4 \rangle \to b \langle 2, T, 6 \rangle \langle 6, S, 4 \rangle a\\
-\langle 2, S, 4 \rangle \to b \langle 5, T, 2 \rangle \langle 2, S, 4 \rangle a\\
-\langle 2, S, 4 \rangle \to b \langle 5, T, 5 \rangle \langle 5, S, 4 \rangle a\\
-\langle 2, S, 4 \rangle \to b \langle 5, T, 6 \rangle \langle 6, S, 3 \rangle a\\
-\langle 2, S, 4 \rangle \to b \langle 5, T, 6 \rangle \langle 6, S, 4 \rangle a\\
-\langle 2, T, 2 \rangle \to a \langle 0, S, 0 \rangle \langle 0, T, 2 \rangle b\\
-\langle 2, T, 2 \rangle \to a \langle 0, S, 0 \rangle \langle 0, T, 6 \rangle b\\
-\langle 2, T, 2 \rangle \to a \langle 0, S, 1 \rangle \langle 1, T, 2 \rangle b\\
-\langle 2, T, 2 \rangle \to a \langle 0, S, 1 \rangle \langle 1, T, 6 \rangle b\\
-\langle 2, T, 2 \rangle \to a \langle 0, S, 3 \rangle \langle 3, T, 2 \rangle b\\
-\langle 2, T, 2 \rangle \to a \langle 0, S, 3 \rangle \langle 3, T, 6 \rangle b\\
-\langle 2, T, 2 \rangle \to a \langle 0, S, 4 \rangle \langle 4, T, 2 \rangle b\\
-\langle 2, T, 2 \rangle \to a \langle 0, S, 4 \rangle \langle 4, T, 6 \rangle b\\
-\langle 2, T, 2 \rangle \to b \langle 2, T, 2 \rangle\\
-\langle 2, T, 2 \rangle \to b \langle 5, T, 2 \rangle\\
-\langle 2, T, 2 \rangle \to b b\\
-\langle 2, T, 5 \rangle \to a \langle 0, S, 0 \rangle \langle 0, T, 2 \rangle b\\
-\langle 2, T, 5 \rangle \to a \langle 0, S, 1 \rangle \langle 1, T, 2 \rangle b\\
-\langle 2, T, 5 \rangle \to a \langle 0, S, 3 \rangle \langle 3, T, 2 \rangle b\\
-\langle 2, T, 5 \rangle \to a \langle 0, S, 4 \rangle \langle 4, T, 2 \rangle b\\
-\langle 2, T, 5 \rangle \to b \langle 2, T, 5 \rangle\\
-\langle 2, T, 5 \rangle \to b \langle 5, T, 5 \rangle\\
-\langle 2, T, 5 \rangle \to b b\\
-\langle 2, T, 6 \rangle \to a \langle 0, S, 0 \rangle \langle 0, T, 5 \rangle b\\
-\langle 2, T, 6 \rangle \to a \langle 0, S, 0 \rangle \langle 0, T, 6 \rangle b\\
-\langle 2, T, 6 \rangle \to a \langle 0, S, 1 \rangle \langle 1, T, 5 \rangle b\\
-\langle 2, T, 6 \rangle \to a \langle 0, S, 1 \rangle \langle 1, T, 6 \rangle b\\
-\langle 2, T, 6 \rangle \to a \langle 0, S, 3 \rangle \langle 3, T, 5 \rangle b\\
-\langle 2, T, 6 \rangle \to a \langle 0, S, 3 \rangle \langle 3, T, 6 \rangle b\\
-\langle 2, T, 6 \rangle \to a \langle 0, S, 4 \rangle \langle 4, T, 5 \rangle b\\
-\langle 2, T, 6 \rangle \to a \langle 0, S, 4 \rangle \langle 4, T, 6 \rangle b\\
-\langle 2, T, 6 \rangle \to b \langle 2, T, 6 \rangle\\
-\langle 2, T, 6 \rangle \to b \langle 5, T, 6 \rangle\\
-\langle 2, T, 6 \rangle \to b b\\
-\langle 3, T, 2 \rangle \to a \langle 0, S, 0 \rangle \langle 0, T, 2 \rangle b\\
-\langle 3, T, 2 \rangle \to a \langle 0, S, 0 \rangle \langle 0, T, 6 \rangle b\\
-\langle 3, T, 2 \rangle \to a \langle 0, S, 1 \rangle \langle 1, T, 2 \rangle b\\
-\langle 3, T, 2 \rangle \to a \langle 0, S, 1 \rangle \langle 1, T, 6 \rangle b\\
-\langle 3, T, 2 \rangle \to a \langle 0, S, 3 \rangle \langle 3, T, 2 \rangle b\\
-\langle 3, T, 2 \rangle \to a \langle 0, S, 3 \rangle \langle 3, T, 6 \rangle b\\
-\langle 3, T, 2 \rangle \to a \langle 0, S, 4 \rangle \langle 4, T, 2 \rangle b\\
-\langle 3, T, 2 \rangle \to a \langle 0, S, 4 \rangle \langle 4, T, 6 \rangle b\\
-\langle 3, T, 2 \rangle \to a \langle 4, S, 0 \rangle \langle 0, T, 2 \rangle b\\
-\langle 3, T, 2 \rangle \to a \langle 4, S, 0 \rangle \langle 0, T, 6 \rangle b\\
-\langle 3, T, 2 \rangle \to a \langle 4, S, 1 \rangle \langle 1, T, 2 \rangle b\\
-\langle 3, T, 2 \rangle \to a \langle 4, S, 1 \rangle \langle 1, T, 6 \rangle b\\
-\langle 3, T, 2 \rangle \to a \langle 4, S, 2 \rangle \langle 2, T, 2 \rangle b\\
-\langle 3, T, 2 \rangle \to a \langle 4, S, 2 \rangle \langle 2, T, 6 \rangle b\\
-\langle 3, T, 2 \rangle \to a \langle 4, S, 4 \rangle \langle 4, T, 2 \rangle b\\
-\langle 3, T, 2 \rangle \to a \langle 4, S, 4 \rangle \langle 4, T, 6 \rangle b\\
-\langle 3, T, 2 \rangle \to a \langle 4, S, 5 \rangle \langle 5, T, 2 \rangle b\\
-\langle 3, T, 2 \rangle \to a \langle 4, S, 5 \rangle \langle 5, T, 6 \rangle b\\
-\langle 3, T, 2 \rangle \to b \langle 2, T, 2 \rangle\\
-\langle 3, T, 2 \rangle \to b \langle 5, T, 2 \rangle\\
-\langle 3, T, 2 \rangle \to b b\\
-\langle 3, T, 5 \rangle \to a \langle 0, S, 0 \rangle \langle 0, T, 2 \rangle b\\
-\langle 3, T, 5 \rangle \to a \langle 0, S, 1 \rangle \langle 1, T, 2 \rangle b\\
-\langle 3, T, 5 \rangle \to a \langle 0, S, 3 \rangle \langle 3, T, 2 \rangle b\\
-\langle 3, T, 5 \rangle \to a \langle 0, S, 4 \rangle \langle 4, T, 2 \rangle b\\
-\langle 3, T, 5 \rangle \to a \langle 4, S, 0 \rangle \langle 0, T, 2 \rangle b\\
-\langle 3, T, 5 \rangle \to a \langle 4, S, 1 \rangle \langle 1, T, 2 \rangle b\\
-\langle 3, T, 5 \rangle \to a \langle 4, S, 2 \rangle \langle 2, T, 2 \rangle b\\
-\langle 3, T, 5 \rangle \to a \langle 4, S, 4 \rangle \langle 4, T, 2 \rangle b\\
-\langle 3, T, 5 \rangle \to a \langle 4, S, 5 \rangle \langle 5, T, 2 \rangle b\\
-\langle 3, T, 5 \rangle \to b \langle 2, T, 5 \rangle\\
-\langle 3, T, 5 \rangle \to b \langle 5, T, 5 \rangle\\
-\langle 3, T, 5 \rangle \to b b\\
-\langle 3, T, 6 \rangle \to a \langle 0, S, 0 \rangle \langle 0, T, 5 \rangle b\\
-\langle 3, T, 6 \rangle \to a \langle 0, S, 0 \rangle \langle 0, T, 6 \rangle b\\
-\langle 3, T, 6 \rangle \to a \langle 0, S, 1 \rangle \langle 1, T, 5 \rangle b\\
-\langle 3, T, 6 \rangle \to a \langle 0, S, 1 \rangle \langle 1, T, 6 \rangle b\\
-\langle 3, T, 6 \rangle \to a \langle 0, S, 3 \rangle \langle 3, T, 5 \rangle b\\
-\langle 3, T, 6 \rangle \to a \langle 0, S, 3 \rangle \langle 3, T, 6 \rangle b\\
-\langle 3, T, 6 \rangle \to a \langle 0, S, 4 \rangle \langle 4, T, 5 \rangle b\\
-\langle 3, T, 6 \rangle \to a \langle 0, S, 4 \rangle \langle 4, T, 6 \rangle b\\
-\langle 3, T, 6 \rangle \to a \langle 4, S, 0 \rangle \langle 0, T, 5 \rangle b\\
-\langle 3, T, 6 \rangle \to a \langle 4, S, 0 \rangle \langle 0, T, 6 \rangle b\\
-\langle 3, T, 6 \rangle \to a \langle 4, S, 1 \rangle \langle 1, T, 5 \rangle b\\
-\langle 3, T, 6 \rangle \to a \langle 4, S, 1 \rangle \langle 1, T, 6 \rangle b\\
-\langle 3, T, 6 \rangle \to a \langle 4, S, 2 \rangle \langle 2, T, 5 \rangle b\\
-\langle 3, T, 6 \rangle \to a \langle 4, S, 2 \rangle \langle 2, T, 6 \rangle b\\
-\langle 3, T, 6 \rangle \to a \langle 4, S, 4 \rangle \langle 4, T, 5 \rangle b\\
-\langle 3, T, 6 \rangle \to a \langle 4, S, 4 \rangle \langle 4, T, 6 \rangle b\\
-\langle 3, T, 6 \rangle \to a \langle 4, S, 5 \rangle \langle 5, T, 5 \rangle b\\
-\langle 3, T, 6 \rangle \to a \langle 4, S, 5 \rangle \langle 5, T, 6 \rangle b\\
-\langle 3, T, 6 \rangle \to b \langle 2, T, 6 \rangle\\
-\langle 3, T, 6 \rangle \to b \langle 5, T, 6 \rangle\\
-\langle 3, T, 6 \rangle \to b b\\
-\langle 4, S, 0 \rangle \to b \langle 2, T, 2 \rangle \langle 2, S, 2 \rangle a\\
-\langle 4, S, 0 \rangle \to b \langle 2, T, 6 \rangle \langle 6, S, 3 \rangle a\\
-\langle 4, S, 0 \rangle \to b \langle 5, T, 2 \rangle \langle 2, S, 2 \rangle a\\
-\langle 4, S, 0 \rangle \to b \langle 5, T, 6 \rangle \langle 6, S, 3 \rangle a\\
-\langle 4, S, 1 \rangle \to b \langle 2, T, 2 \rangle \langle 2, S, 0 \rangle a\\
-\langle 4, S, 1 \rangle \to b \langle 2, T, 5 \rangle \langle 5, S, 0 \rangle a\\
-\langle 4, S, 1 \rangle \to b \langle 2, T, 6 \rangle \langle 6, S, 0 \rangle a\\
-\langle 4, S, 1 \rangle \to b \langle 5, T, 2 \rangle \langle 2, S, 0 \rangle a\\
-\langle 4, S, 1 \rangle \to b \langle 5, T, 5 \rangle \langle 5, S, 0 \rangle a\\
-\langle 4, S, 1 \rangle \to b \langle 5, T, 6 \rangle \langle 6, S, 0 \rangle a\\
-\langle 4, S, 2 \rangle \to a b\\
-\langle 4, S, 4 \rangle \to b \langle 2, T, 2 \rangle \langle 2, S, 4 \rangle a\\
-\langle 4, S, 4 \rangle \to b \langle 2, T, 5 \rangle \langle 5, S, 4 \rangle a\\
-\langle 4, S, 4 \rangle \to b \langle 2, T, 6 \rangle \langle 6, S, 3 \rangle a\\
-\langle 4, S, 4 \rangle \to b \langle 2, T, 6 \rangle \langle 6, S, 4 \rangle a\\
-\langle 4, S, 4 \rangle \to b \langle 5, T, 2 \rangle \langle 2, S, 4 \rangle a\\
-\langle 4, S, 4 \rangle \to b \langle 5, T, 5 \rangle \langle 5, S, 4 \rangle a\\
-\langle 4, S, 4 \rangle \to b \langle 5, T, 6 \rangle \langle 6, S, 3 \rangle a\\
-\langle 4, S, 4 \rangle \to b \langle 5, T, 6 \rangle \langle 6, S, 4 \rangle a\\
-\langle 4, S, 5 \rangle \to a b\\
-\langle 4, T, 2 \rangle \to a \langle 4, S, 0 \rangle \langle 0, T, 2 \rangle b\\
-\langle 4, T, 2 \rangle \to a \langle 4, S, 0 \rangle \langle 0, T, 6 \rangle b\\
-\langle 4, T, 2 \rangle \to a \langle 4, S, 1 \rangle \langle 1, T, 2 \rangle b\\
-\langle 4, T, 2 \rangle \to a \langle 4, S, 1 \rangle \langle 1, T, 6 \rangle b\\
-\langle 4, T, 2 \rangle \to a \langle 4, S, 2 \rangle \langle 2, T, 2 \rangle b\\
-\langle 4, T, 2 \rangle \to a \langle 4, S, 2 \rangle \langle 2, T, 6 \rangle b\\
-\langle 4, T, 2 \rangle \to a \langle 4, S, 4 \rangle \langle 4, T, 2 \rangle b\\
-\langle 4, T, 2 \rangle \to a \langle 4, S, 4 \rangle \langle 4, T, 6 \rangle b\\
-\langle 4, T, 2 \rangle \to a \langle 4, S, 5 \rangle \langle 5, T, 2 \rangle b\\
-\langle 4, T, 2 \rangle \to a \langle 4, S, 5 \rangle \langle 5, T, 6 \rangle b\\
-\langle 4, T, 2 \rangle \to b \langle 2, T, 2 \rangle\\
-\langle 4, T, 2 \rangle \to b \langle 5, T, 2 \rangle\\
-\langle 4, T, 2 \rangle \to b b\\
-\langle 4, T, 5 \rangle \to a \langle 4, S, 0 \rangle \langle 0, T, 2 \rangle b\\
-\langle 4, T, 5 \rangle \to a \langle 4, S, 1 \rangle \langle 1, T, 2 \rangle b\\
-\langle 4, T, 5 \rangle \to a \langle 4, S, 2 \rangle \langle 2, T, 2 \rangle b\\
-\langle 4, T, 5 \rangle \to a \langle 4, S, 4 \rangle \langle 4, T, 2 \rangle b\\
-\langle 4, T, 5 \rangle \to a \langle 4, S, 5 \rangle \langle 5, T, 2 \rangle b\\
-\langle 4, T, 5 \rangle \to b \langle 2, T, 5 \rangle\\
-\langle 4, T, 5 \rangle \to b \langle 5, T, 5 \rangle\\
-\langle 4, T, 5 \rangle \to b b\\
-\langle 4, T, 6 \rangle \to a \langle 4, S, 0 \rangle \langle 0, T, 5 \rangle b\\
-\langle 4, T, 6 \rangle \to a \langle 4, S, 0 \rangle \langle 0, T, 6 \rangle b\\
-\langle 4, T, 6 \rangle \to a \langle 4, S, 1 \rangle \langle 1, T, 5 \rangle b\\
-\langle 4, T, 6 \rangle \to a \langle 4, S, 1 \rangle \langle 1, T, 6 \rangle b\\
-\langle 4, T, 6 \rangle \to a \langle 4, S, 2 \rangle \langle 2, T, 5 \rangle b\\
-\langle 4, T, 6 \rangle \to a \langle 4, S, 2 \rangle \langle 2, T, 6 \rangle b\\
-\langle 4, T, 6 \rangle \to a \langle 4, S, 4 \rangle \langle 4, T, 5 \rangle b\\
-\langle 4, T, 6 \rangle \to a \langle 4, S, 4 \rangle \langle 4, T, 6 \rangle b\\
-\langle 4, T, 6 \rangle \to a \langle 4, S, 5 \rangle \langle 5, T, 5 \rangle b\\
-\langle 4, T, 6 \rangle \to a \langle 4, S, 5 \rangle \langle 5, T, 6 \rangle b\\
-\langle 4, T, 6 \rangle \to b \langle 2, T, 6 \rangle\\
-\langle 4, T, 6 \rangle \to b \langle 5, T, 6 \rangle\\
-\langle 4, T, 6 \rangle \to b b\\
-\langle 5, S, 0 \rangle \to b \langle 6, T, 2 \rangle \langle 2, S, 2 \rangle a\\
-\langle 5, S, 0 \rangle \to b \langle 6, T, 6 \rangle \langle 6, S, 3 \rangle a\\
-\langle 5, S, 4 \rangle \to b \langle 6, T, 2 \rangle \langle 2, S, 4 \rangle a\\
-\langle 5, S, 4 \rangle \to b \langle 6, T, 5 \rangle \langle 5, S, 4 \rangle a\\
-\langle 5, S, 4 \rangle \to b \langle 6, T, 6 \rangle \langle 6, S, 3 \rangle a\\
-\langle 5, S, 4 \rangle \to b \langle 6, T, 6 \rangle \langle 6, S, 4 \rangle a\\
-\langle 5, T, 2 \rangle \to b \langle 6, T, 2 \rangle\\
-\langle 5, T, 2 \rangle \to b b\\
-\langle 5, T, 5 \rangle \to b \langle 6, T, 5 \rangle\\
-\langle 5, T, 6 \rangle \to b \langle 6, T, 6 \rangle\\
-\langle 5, T, 6 \rangle \to b b\\
-\langle 6, S, 0 \rangle \to b \langle 2, T, 2 \rangle \langle 2, S, 2 \rangle a\\
-\langle 6, S, 0 \rangle \to b \langle 2, T, 6 \rangle \langle 6, S, 3 \rangle a\\
-\langle 6, S, 0 \rangle \to b \langle 6, T, 2 \rangle \langle 2, S, 2 \rangle a\\
-\langle 6, S, 0 \rangle \to b \langle 6, T, 6 \rangle \langle 6, S, 3 \rangle a\\
-\langle 6, S, 3 \rangle \to a b\\
-\langle 6, S, 4 \rangle \to b \langle 2, T, 2 \rangle \langle 2, S, 4 \rangle a\\
-\langle 6, S, 4 \rangle \to b \langle 2, T, 5 \rangle \langle 5, S, 4 \rangle a\\
-\langle 6, S, 4 \rangle \to b \langle 2, T, 6 \rangle \langle 6, S, 3 \rangle a\\
-\langle 6, S, 4 \rangle \to b \langle 2, T, 6 \rangle \langle 6, S, 4 \rangle a\\
-\langle 6, S, 4 \rangle \to b \langle 6, T, 2 \rangle \langle 2, S, 4 \rangle a\\
-\langle 6, S, 4 \rangle \to b \langle 6, T, 5 \rangle \langle 5, S, 4 \rangle a\\
-\langle 6, S, 4 \rangle \to b \langle 6, T, 6 \rangle \langle 6, S, 3 \rangle a\\
-\langle 6, S, 4 \rangle \to b \langle 6, T, 6 \rangle \langle 6, S, 4 \rangle a\\
-\langle 6, T, 2 \rangle \to a \langle 1, S, 0 \rangle \langle 0, T, 2 \rangle b\\
-\langle 6, T, 2 \rangle \to a \langle 1, S, 0 \rangle \langle 0, T, 6 \rangle b\\
-\langle 6, T, 2 \rangle \to a \langle 1, S, 1 \rangle \langle 1, T, 2 \rangle b\\
-\langle 6, T, 2 \rangle \to a \langle 1, S, 1 \rangle \langle 1, T, 6 \rangle b\\
-\langle 6, T, 2 \rangle \to a \langle 1, S, 4 \rangle \langle 4, T, 2 \rangle b\\
-\langle 6, T, 2 \rangle \to a \langle 1, S, 4 \rangle \langle 4, T, 6 \rangle b\\
-\langle 6, T, 2 \rangle \to b \langle 2, T, 2 \rangle\\
-\langle 6, T, 2 \rangle \to b \langle 6, T, 2 \rangle\\
-\langle 6, T, 2 \rangle \to b b\\
-\langle 6, T, 5 \rangle \to a \langle 1, S, 0 \rangle \langle 0, T, 2 \rangle b\\
-\langle 6, T, 5 \rangle \to a \langle 1, S, 1 \rangle \langle 1, T, 2 \rangle b\\
-\langle 6, T, 5 \rangle \to a \langle 1, S, 4 \rangle \langle 4, T, 2 \rangle b\\
-\langle 6, T, 5 \rangle \to b \langle 2, T, 5 \rangle\\
-\langle 6, T, 5 \rangle \to b \langle 6, T, 5 \rangle\\
-\langle 6, T, 5 \rangle \to b b\\
-\langle 6, T, 6 \rangle \to a \langle 1, S, 0 \rangle \langle 0, T, 5 \rangle b\\
-\langle 6, T, 6 \rangle \to a \langle 1, S, 0 \rangle \langle 0, T, 6 \rangle b\\
-\langle 6, T, 6 \rangle \to a \langle 1, S, 1 \rangle \langle 1, T, 5 \rangle b\\
-\langle 6, T, 6 \rangle \to a \langle 1, S, 1 \rangle \langle 1, T, 6 \rangle b\\
-\langle 6, T, 6 \rangle \to a \langle 1, S, 4 \rangle \langle 4, T, 5 \rangle b\\
-\langle 6, T, 6 \rangle \to a \langle 1, S, 4 \rangle \langle 4, T, 6 \rangle b\\
-\langle 6, T, 6 \rangle \to b \langle 2, T, 6 \rangle\\
-\langle 6, T, 6 \rangle \to b \langle 6, T, 6 \rangle\\
-\langle 6, T, 6 \rangle \to b b\\
-$$
+В rules/ll1.pdf, так как в .md красиво не рендерится :(
 
 #### LR(0)-аппроксимация
 
@@ -341,42 +98,4 @@ $$
 
 #### Правила из пересечения грамматики и LR(0)-аппроксимации
 
-$$
-\langle 0, S, 4 \rangle \to a b\\
-\langle 0, S, 5 \rangle \to b \langle 1, T, 1 \rangle \langle 1, S, 5 \rangle a\\
-\langle 0, S, 5 \rangle \to b \langle 1, T, 1 \rangle \langle 1, S, 4 \rangle a\\
-\langle 1, S, 4 \rangle \to a b\\
-\langle 1, S, 5 \rangle \to b \langle 1, T, 1 \rangle \langle 1, S, 5 \rangle a\\
-\langle 1, S, 5 \rangle \to b \langle 1, T, 1 \rangle \langle 1, S, 4 \rangle a\\
-\langle 2, S, 4 \rangle \to a b\\
-\langle 2, S, 5 \rangle \to b \langle 4, T, 1 \rangle \langle 1, S, 5 \rangle a\\
-\langle 2, S, 5 \rangle \to b \langle 4, T, 1 \rangle \langle 1, S, 4 \rangle a\\
-\langle 3, S, 5 \rangle \to b \langle 4, T, 1 \rangle \langle 1, S, 5 \rangle a\\
-\langle 3, S, 5 \rangle \to b \langle 4, T, 1 \rangle \langle 1, S, 4 \rangle a\\
-\langle 4, S, 4 \rangle \to a b\\
-\langle 4, S, 5 \rangle \to b \langle 1, T, 1 \rangle \langle 1, S, 5 \rangle a\\
-\langle 4, S, 5 \rangle \to b \langle 1, T, 1 \rangle \langle 1, S, 4 \rangle a\\
-\langle 5, S, 4 \rangle \to a b\\
-\langle 5, S, 5 \rangle \to b \langle 4, T, 1 \rangle \langle 1, S, 5 \rangle a\\
-\langle 5, S, 5 \rangle \to b \langle 4, T, 1 \rangle \langle 1, S, 4 \rangle a\\
-\langle 0, T, 1 \rangle \to a \langle 3, S, 5 \rangle \langle 5, T, 1 \rangle b\\
-\langle 0, T, 1 \rangle \to b \langle 1, T, 1 \rangle\\
-\langle 0, T, 1 \rangle \to b b\\
-\langle 1, T, 1 \rangle \to a \langle 2, S, 5 \rangle \langle 5, T, 1 \rangle b\\
-\langle 1, T, 1 \rangle \to a \langle 2, S, 4 \rangle \langle 4, T, 1 \rangle b\\
-\langle 1, T, 1 \rangle \to b \langle 1, T, 1 \rangle\\
-\langle 1, T, 1 \rangle \to b b\\
-\langle 2, T, 1 \rangle \to a \langle 3, S, 5 \rangle \langle 5, T, 1 \rangle b\\
-\langle 2, T, 1 \rangle \to b \langle 4, T, 1 \rangle\\
-\langle 2, T, 1 \rangle \to b b\\
-\langle 3, T, 1 \rangle \to b \langle 4, T, 1 \rangle\\
-\langle 3, T, 1 \rangle \to b b\\
-\langle 4, T, 1 \rangle \to a \langle 5, S, 5 \rangle \langle 5, T, 1 \rangle b\\
-\langle 4, T, 1 \rangle \to a \langle 5, S, 4 \rangle \langle 4, T, 1 \rangle b\\
-\langle 4, T, 1 \rangle \to b \langle 1, T, 1 \rangle\\
-\langle 4, T, 1 \rangle \to b b\\
-\langle 5, T, 1 \rangle \to a \langle 5, S, 5 \rangle \langle 5, T, 1 \rangle b\\
-\langle 5, T, 1 \rangle \to a \langle 5, S, 4 \rangle \langle 4, T, 1 \rangle b\\
-\langle 5, T, 1 \rangle \to b \langle 4, T, 1 \rangle \\
-\langle 5, T, 1 \rangle \to b b \\
-$$
+В rules/lr0.pdf, так как в .md красиво не рендерится :(
