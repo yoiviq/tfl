@@ -2,14 +2,12 @@
 
 Дана грамматика: 
 
-$$
-S \to bTSa\\
-T \to aSTb\\
-S \to ab\\
-T \to bT\\
-T \to bb\\
-$$
-
+* $ S \to bTSa $
+* $ T \to aSTb $
+* $ S \to ab $
+* $ T \to bT $
+* $ T \to bb $
+ 
 #### Анализ на детерминизм
 
 Построим PDA для этого языка и проанализируем возникший недетерминизм: 
@@ -20,10 +18,8 @@ $$
 
 Рассмотрим два слова с длинным общим префиксом:
 
-$$
-(ba)^{n}b~baab (bbbaba)^n\\
-(ba)^{n}b~bbaba~(bbbaba)^{n}
-$$
+* $(ba)^{n}b~baab (bbbaba)^n$
+* $(ba)^{n}b~bbaba~(bbbaba)^{n}$
 
 После прочтения общего префикса $(ba)^nb$, стек имеет вид $(aSbT)^naST$. 
 
@@ -35,33 +31,32 @@ $$
 
 Рассмотрим слово $w_1 = bbbbbbaba$ и $w_2 = bbbbbbabaa$. Они принадлежат языку и выводятся из правил грамматики следующим образом:
 
-$$
-S \to bTSa \to b^6Sa \to bbbbbbaba = w_1 \\
-S \to bTSa \to bbbSa \to bbbbTSaa \to bbbbbbabaa = w_2
-$$. 
+* $S \to bTSa \to b^6Sa \to bbbbbbaba = w_1$
+* $S \to bTSa \to bbbSa \to bbbbTSaa \to bbbbbbabaa = w_2$
+
 
 Так как $w_2 = w_1a$, $w_1$ является префиксом слова $w_2$, поэтому язык, порожденный грамматикой, не является беспрефиксным.
 
-###### Язык не обладает LL-свойством, так как он недетерминирован
+**Язык не обладает LL-свойством, так как он недетерминирован**
 
 #### LL(1)-аппроксимация
 
 Для начала линеаризуем грамматику и построим $First$, $Follow$ и $Last$ множества
 
-$$ 
-S \to b_1TSa_1\\
-T \to a_2STb_2\\
-S \to a_3b_3\\
-T \to b_4T\\
-T \to b_5b_6
+* $S \to b_1TSa_1$
+* $T \to a_2STb_2$
+* $S \to a_3b_3$
+* $T \to b_4T$
+* $T \to b_5b_6$
+
+$$
+\begin{aligned}
+First(G) = \lbrace b_1, a_3 \rbrace \\
+Last(G) = \lbrace a_1, b_3 \rbrace
+\end{aligned}
 $$
 
 $$
-First(G) = \lbrace b_1, a_3 \rbrace \\ 
-Last(G) = \lbrace a_1, b_3 \rbrace\\
-$$
-
-\[
 \begin{aligned}
 Follow(G) &= \bigl\{
 a_1a_1, a_1b_4, a_1b_5, b_1a_2, b_1b_4, b_1b_5, a_3b_3, a_2b_1, a_2a_3,\\
@@ -69,7 +64,7 @@ a_1a_1, a_1b_4, a_1b_5, b_1a_2, b_1b_4, b_1b_5, a_3b_3, a_2b_1, a_2a_3,\\
 &\qquad b_6b_1, b_6a_3, b_6b_2, b_3a_1, b_3a_2, b_3b_4, b_3b_5
 \bigr\}.
 \end{aligned}
-\]
+$$
 
 Получаем $LL(1)$-аппроксимацию:
 
