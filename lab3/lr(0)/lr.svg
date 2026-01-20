@@ -1,0 +1,301 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1010pt" height="629pt" viewBox="0.00 0.00 1010.01 628.84">
+<g id="graph0" class="graph" transform="translate(4,624.8400268554688) scale(1)" data-name="G">
+
+<polygon fill="white" stroke="none" points="-4,4 -4,-624.84 1006.01,-624.84 1006.01,4 -4,4"/>
+<!-- I0 -->
+<g id="node1" class="node" pointer-events="visible" data-name="I0">
+
+<text text-anchor="start" x="40" y="-565.04" font-family="Times New Roman" font-weight="bold" font-size="12.00">0</text>
+<text text-anchor="start" x="13.5" y="-542.04" font-family="Times New Roman" font-size="12.00"> • S</text>
+<text text-anchor="start" x="13.5" y="-520.04" font-family="Times New Roman" font-size="12.00">S → • bTSa</text>
+<text text-anchor="start" x="13.5" y="-498.04" font-family="Times New Roman" font-size="12.00">S → • ab</text>
+<polygon fill="none" stroke="black" points="8,-489.84 8,-579.84 77,-579.84 77,-489.84 8,-489.84"/>
+</g>
+<!-- I -->
+<g id="node2" class="node" pointer-events="visible" data-name="I">
+
+<text text-anchor="start" x="168.34" y="-600.04" font-family="Times New Roman" font-weight="bold" font-size="12.00">S</text>
+<text text-anchor="start" x="162.34" y="-577.04" font-family="Times New Roman" font-size="12.00">S •</text>
+<polygon fill="none" stroke="black" stroke-width="3" points="157.17,-568.34 157.17,-615.34 186.17,-615.34 186.17,-568.34 157.17,-568.34"/>
+</g>
+<!-- I0&#45;&gt;I -->
+<g id="edge1" class="edge" data-name="I0-&gt;I">
+
+<path fill="none" stroke="black" d="M84.79,-553.35C100.82,-560.53 119.01,-568.69 134.51,-575.63"/>
+<polygon fill="black" stroke="black" points="132.82,-578.71 143.38,-579.61 135.68,-572.32 132.82,-578.71"/>
+<text text-anchor="middle" x="106.34" y="-566.44" font-family="Times New Roman" font-size="12.00">S</text>
+</g>
+<!-- I1 -->
+<g id="node3" class="node" pointer-events="visible" data-name="I1">
+
+<text text-anchor="start" x="693.68" y="-428.04" font-family="Times New Roman" font-weight="bold" font-size="12.00">1</text>
+<text text-anchor="start" x="672.68" y="-405.04" font-family="Times New Roman" font-size="12.00">S → a • b</text>
+<polygon fill="none" stroke="black" points="667.68,-396.84 667.68,-442.84 725.68,-442.84 725.68,-396.84 667.68,-396.84"/>
+</g>
+<!-- I0&#45;&gt;I1 -->
+<g id="edge2" class="edge" data-name="I0-&gt;I1">
+
+<path fill="none" stroke="black" d="M84.74,-534.84C109.63,-534.84 141.97,-534.84 170.67,-534.84 170.67,-534.84 170.67,-534.84 566.51,-534.84 614.47,-534.84 652.87,-490.07 674.97,-456.4"/>
+<polygon fill="black" stroke="black" points="677.84,-458.41 680.22,-448.08 671.92,-454.67 677.84,-458.41"/>
+<text text-anchor="middle" x="368.34" y="-538.44" font-family="Times New Roman" font-size="12.00">a</text>
+</g>
+<!-- I2 -->
+<g id="node4" class="node" pointer-events="visible" data-name="I2">
+
+<text text-anchor="start" x="168.67" y="-440.04" font-family="Times New Roman" font-weight="bold" font-size="12.00">2</text>
+<text text-anchor="start" x="140.67" y="-417.04" font-family="Times New Roman" font-size="12.00">S → b • TSa</text>
+<text text-anchor="start" x="140.67" y="-395.04" font-family="Times New Roman" font-size="12.00">T → • aSTb</text>
+<text text-anchor="start" x="140.67" y="-373.04" font-family="Times New Roman" font-size="12.00">T → • bT</text>
+<text text-anchor="start" x="140.67" y="-351.04" font-family="Times New Roman" font-size="12.00">T → • bb</text>
+<polygon fill="none" stroke="black" points="135.67,-342.84 135.67,-454.84 207.67,-454.84 207.67,-342.84 135.67,-342.84"/>
+</g>
+<!-- I0&#45;&gt;I2 -->
+<g id="edge3" class="edge" data-name="I0-&gt;I2">
+
+<path fill="none" stroke="black" d="M84.79,-490.69C96.09,-478.6 108.47,-465.36 120.23,-452.79"/>
+<polygon fill="black" stroke="black" points="122.54,-455.44 126.81,-445.75 117.42,-450.66 122.54,-455.44"/>
+<text text-anchor="middle" x="106.34" y="-474.44" font-family="Times New Roman" font-size="12.00">b</text>
+</g>
+<!-- I3 -->
+<g id="node5" class="node" pointer-events="visible" data-name="I3">
+
+<text text-anchor="start" x="825.01" y="-428.04" font-family="Times New Roman" font-weight="bold" font-size="12.00">3</text>
+<text text-anchor="start" x="804.01" y="-405.04" font-family="Times New Roman" font-size="12.00">S → ab • </text>
+<polygon fill="none" stroke="black" stroke-width="3" points="798.51,-396.34 798.51,-443.34 857.51,-443.34 857.51,-396.34 798.51,-396.34"/>
+</g>
+<!-- I1&#45;&gt;I3 -->
+<g id="edge4" class="edge" data-name="I1-&gt;I3">
+
+<path fill="none" stroke="black" d="M733.36,-419.84C747.19,-419.84 763.24,-419.84 778.1,-419.84"/>
+<polygon fill="black" stroke="black" points="777.67,-423.34 787.67,-419.84 777.67,-416.34 777.67,-423.34"/>
+<text text-anchor="middle" x="762.35" y="-423.44" font-family="Times New Roman" font-size="12.00">b</text>
+</g>
+<!-- I4 -->
+<g id="node6" class="node" pointer-events="visible" data-name="I4">
+
+<text text-anchor="start" x="300.5" y="-203.04" font-family="Times New Roman" font-weight="bold" font-size="12.00">4</text>
+<text text-anchor="start" x="274" y="-180.04" font-family="Times New Roman" font-size="12.00">T → b • T</text>
+<text text-anchor="start" x="274" y="-158.04" font-family="Times New Roman" font-size="12.00">T → b • b</text>
+<text text-anchor="start" x="273.67" y="-136.04" font-family="Times New Roman" font-size="12.00">T → • aSTb</text>
+<text text-anchor="start" x="274" y="-114.04" font-family="Times New Roman" font-size="12.00">T → • bT</text>
+<text text-anchor="start" x="274" y="-92.04" font-family="Times New Roman" font-size="12.00">T → • bb</text>
+<polygon fill="none" stroke="black" points="268.5,-83.84 268.5,-217.84 337.5,-217.84 337.5,-83.84 268.5,-83.84"/>
+</g>
+<!-- I2&#45;&gt;I4 -->
+<g id="edge5" class="edge" data-name="I2-&gt;I4">
+
+<path fill="none" stroke="black" d="M203.82,-339.12C220.62,-306.9 241.6,-266.68 259.84,-231.69"/>
+<polygon fill="black" stroke="black" points="262.94,-233.32 264.46,-222.84 256.73,-230.09 262.94,-233.32"/>
+<text text-anchor="middle" x="237.34" y="-278.44" font-family="Times New Roman" font-size="12.00">b</text>
+</g>
+<!-- I6 -->
+<g id="node8" class="node" pointer-events="visible" data-name="I6">
+
+<text text-anchor="start" x="562.51" y="-351.04" font-family="Times New Roman" font-weight="bold" font-size="12.00">6</text>
+<text text-anchor="start" x="534.18" y="-328.04" font-family="Times New Roman" font-size="12.00">T → a • STb</text>
+<text text-anchor="start" x="534.51" y="-306.04" font-family="Times New Roman" font-size="12.00">S → • ab</text>
+<text text-anchor="start" x="534.51" y="-284.04" font-family="Times New Roman" font-size="12.00">S → • bTSa</text>
+<polygon fill="none" stroke="black" points="529.51,-275.84 529.51,-365.84 601.51,-365.84 601.51,-275.84 529.51,-275.84"/>
+</g>
+<!-- I2&#45;&gt;I6 -->
+<g id="edge8" class="edge" data-name="I2-&gt;I6">
+
+<path fill="none" stroke="black" d="M215.61,-398.82C279.83,-397.59 403.95,-390.55 503.01,-356.84 505.72,-355.92 508.45,-354.87 511.17,-353.72"/>
+<polygon fill="black" stroke="black" points="512.59,-356.92 520.16,-349.51 509.62,-350.58 512.59,-356.92"/>
+<text text-anchor="middle" x="368.34" y="-390.44" font-family="Times New Roman" font-size="12.00">a</text>
+</g>
+<!-- I7 -->
+<g id="node9" class="node" pointer-events="visible" data-name="I7">
+
+<text text-anchor="start" x="300" y="-488.04" font-family="Times New Roman" font-weight="bold" font-size="12.00">7</text>
+<text text-anchor="start" x="272" y="-465.04" font-family="Times New Roman" font-size="12.00">S → bT • Sa</text>
+<text text-anchor="start" x="272" y="-443.04" font-family="Times New Roman" font-size="12.00">S → • ab</text>
+<text text-anchor="start" x="272" y="-421.04" font-family="Times New Roman" font-size="12.00">S → • bTSa</text>
+<polygon fill="none" stroke="black" points="267,-412.84 267,-502.84 339,-502.84 339,-412.84 267,-412.84"/>
+</g>
+<!-- I2&#45;&gt;I7 -->
+<g id="edge9" class="edge" data-name="I2-&gt;I7">
+
+<path fill="none" stroke="black" d="M215.65,-409.08C224.22,-411.7 233.03,-414.82 241,-418.44 243.76,-419.69 246.54,-421.06 249.3,-422.5"/>
+<polygon fill="black" stroke="black" points="247.48,-425.49 257.92,-427.29 250.88,-419.37 247.48,-425.49"/>
+<text text-anchor="middle" x="237.34" y="-421.44" font-family="Times New Roman" font-size="12.00">T</text>
+</g>
+<!-- I5 -->
+<g id="node7" class="node" pointer-events="visible" data-name="I5">
+
+<text text-anchor="start" x="431.18" y="-214.04" font-family="Times New Roman" font-weight="bold" font-size="12.00">5</text>
+<text text-anchor="start" x="404.68" y="-191.04" font-family="Times New Roman" font-size="12.00">T → bb •</text>
+<text text-anchor="start" x="404.68" y="-169.04" font-family="Times New Roman" font-size="12.00">T → b • T</text>
+<text text-anchor="start" x="404.68" y="-147.04" font-family="Times New Roman" font-size="12.00">T → b • b</text>
+<text text-anchor="start" x="404.35" y="-125.04" font-family="Times New Roman" font-size="12.00">T → • aSTb</text>
+<text text-anchor="start" x="404.68" y="-103.04" font-family="Times New Roman" font-size="12.00">T → • bT</text>
+<text text-anchor="start" x="404.68" y="-81.04" font-family="Times New Roman" font-size="12.00">T → • bb</text>
+<polygon fill="none" stroke="black" points="399.18,-72.84 399.18,-228.84 468.18,-228.84 468.18,-72.84 399.18,-72.84"/>
+</g>
+<!-- I4&#45;&gt;I5 -->
+<g id="edge6" class="edge" data-name="I4-&gt;I5">
+
+<path fill="none" stroke="black" d="M345.43,-150.84C356.45,-150.84 368.5,-150.84 380.03,-150.84"/>
+<polygon fill="black" stroke="black" points="379.82,-154.34 389.82,-150.84 379.82,-147.34 379.82,-154.34"/>
+<text text-anchor="middle" x="368.34" y="-154.44" font-family="Times New Roman" font-size="12.00">b</text>
+</g>
+<!-- I4&#45;&gt;I6 -->
+<g id="edge14" class="edge" data-name="I4-&gt;I6">
+
+<path fill="none" stroke="black" d="M340.97,-221.62C354.06,-240.96 370.41,-260.3 389.68,-273.84 425.45,-298.98 473.97,-310.68 510.82,-316.12"/>
+<polygon fill="black" stroke="black" points="509.97,-319.53 520.35,-317.41 510.91,-312.6 509.97,-319.53"/>
+<text text-anchor="middle" x="433.68" y="-312.44" font-family="Times New Roman" font-size="12.00">a</text>
+</g>
+<!-- I10 -->
+<g id="node12" class="node" pointer-events="visible" data-name="I10">
+
+<text text-anchor="start" x="560.01" y="-86.04" font-family="Times New Roman" font-weight="bold" font-size="12.00">10</text>
+<text text-anchor="start" x="542.18" y="-63.04" font-family="Times New Roman" font-size="12.00">T → bT •</text>
+<polygon fill="none" stroke="black" points="537.01,-54.84 537.01,-100.84 594.01,-100.84 594.01,-54.84 537.01,-54.84"/>
+</g>
+<!-- I4&#45;&gt;I10 -->
+<g id="edge15" class="edge" data-name="I4-&gt;I10">
+
+<path fill="none" stroke="black" d="M345.42,-81.65C357.7,-67.05 372.54,-53.6 389.68,-45.44 430.65,-25.95 482.21,-39.52 518.69,-54.62"/>
+<polygon fill="black" stroke="black" points="517.07,-57.73 527.64,-58.5 519.86,-51.31 517.07,-57.73"/>
+<text text-anchor="middle" x="433.68" y="-49.44" font-family="Times New Roman" font-size="12.00">T</text>
+</g>
+<!-- I5&#45;&gt;I5 -->
+<g id="edge7" class="edge" data-name="I5-&gt;I5">
+
+<path fill="none" stroke="black" d="M422.87,-232.84C424.72,-243.66 428.32,-250.84 433.68,-250.84 436.94,-250.84 439.56,-248.18 441.52,-243.65"/>
+<polygon fill="black" stroke="black" points="444.81,-244.87 444.08,-234.3 438.06,-243.02 444.81,-244.87"/>
+<text text-anchor="middle" x="433.68" y="-254.44" font-family="Times New Roman" font-size="12.00">b</text>
+</g>
+<!-- I5&#45;&gt;I6 -->
+<g id="edge17" class="edge" data-name="I5-&gt;I6">
+
+<path fill="none" stroke="black" d="M476.11,-205.1C490.21,-223.55 506.01,-244.24 520.31,-262.97"/>
+<polygon fill="black" stroke="black" points="517.43,-264.96 526.28,-270.78 522.99,-260.71 517.43,-264.96"/>
+<text text-anchor="middle" x="499.34" y="-239.44" font-family="Times New Roman" font-size="12.00">a</text>
+</g>
+<!-- I5&#45;&gt;I10 -->
+<g id="edge16" class="edge" data-name="I5-&gt;I10">
+
+<path fill="none" stroke="black" d="M476.11,-127.54C489.85,-119.82 505.2,-111.19 519.21,-103.31"/>
+<polygon fill="black" stroke="black" points="520.81,-106.43 527.82,-98.47 517.38,-100.32 520.81,-106.43"/>
+<text text-anchor="middle" x="499.34" y="-120.44" font-family="Times New Roman" font-size="12.00">T</text>
+</g>
+<!-- I6&#45;&gt;I1 -->
+<g id="edge18" class="edge" data-name="I6-&gt;I1">
+
+<path fill="none" stroke="black" d="M609.16,-353.53C622.91,-364.07 638.15,-375.75 651.97,-386.34"/>
+<polygon fill="black" stroke="black" points="649.55,-388.9 659.62,-392.2 653.81,-383.34 649.55,-388.9"/>
+<text text-anchor="middle" x="631.34" y="-373.44" font-family="Times New Roman" font-size="12.00">a</text>
+</g>
+<!-- I6&#45;&gt;I2 -->
+<g id="edge19" class="edge" data-name="I6-&gt;I2">
+
+<path fill="none" stroke="black" d="M521.58,-329.39C449.67,-343.7 305.03,-372.49 226.45,-388.14"/>
+<polygon fill="black" stroke="black" points="225.96,-384.67 216.84,-390.05 227.33,-391.53 225.96,-384.67"/>
+<text text-anchor="middle" x="368.34" y="-363.44" font-family="Times New Roman" font-size="12.00">b</text>
+</g>
+<!-- I11 -->
+<g id="node13" class="node" pointer-events="visible" data-name="I11">
+
+<text text-anchor="start" x="690.68" y="-325.04" font-family="Times New Roman" font-weight="bold" font-size="12.00">11</text>
+<text text-anchor="start" x="665.35" y="-302.04" font-family="Times New Roman" font-size="12.00">T → aS • Tb</text>
+<text text-anchor="start" x="665.68" y="-280.04" font-family="Times New Roman" font-size="12.00">T → • bb</text>
+<text text-anchor="start" x="665.68" y="-258.04" font-family="Times New Roman" font-size="12.00">T → • aSTb</text>
+<text text-anchor="start" x="665.68" y="-236.04" font-family="Times New Roman" font-size="12.00">T → • bT</text>
+<polygon fill="none" stroke="black" points="660.68,-227.84 660.68,-339.84 732.68,-339.84 732.68,-227.84 660.68,-227.84"/>
+</g>
+<!-- I6&#45;&gt;I11 -->
+<g id="edge20" class="edge" data-name="I6-&gt;I11">
+
+<path fill="none" stroke="black" d="M609.24,-291.8C615.33,-288.8 621.67,-286.21 628.01,-284.44 632.34,-283.24 636.89,-282.38 641.5,-281.79"/>
+<polygon fill="black" stroke="black" points="641.78,-285.28 651.46,-280.96 641.2,-278.3 641.78,-285.28"/>
+<text text-anchor="middle" x="631.34" y="-287.44" font-family="Times New Roman" font-size="12.00">S</text>
+</g>
+<!-- I7&#45;&gt;I1 -->
+<g id="edge10" class="edge" data-name="I7-&gt;I1">
+
+<path fill="none" stroke="black" d="M346.94,-447.58C360.54,-444.66 375.67,-441.76 389.68,-439.84 480.66,-427.37 587.97,-422.63 648.29,-420.86"/>
+<polygon fill="black" stroke="black" points="648.3,-424.36 658.2,-420.58 648.11,-417.36 648.3,-424.36"/>
+<text text-anchor="middle" x="499.34" y="-431.44" font-family="Times New Roman" font-size="12.00">a</text>
+</g>
+<!-- I7&#45;&gt;I2 -->
+<g id="edge11" class="edge" data-name="I7-&gt;I2">
+
+<path fill="none" stroke="black" d="M259.3,-443.4C250.71,-440.16 241.83,-436.58 233.67,-432.84 231.07,-431.65 228.43,-430.39 225.77,-429.08"/>
+<polygon fill="black" stroke="black" points="227.4,-425.98 216.91,-424.54 224.21,-432.21 227.4,-425.98"/>
+<text text-anchor="middle" x="237.34" y="-439.44" font-family="Times New Roman" font-size="12.00">b</text>
+</g>
+<!-- I8 -->
+<g id="node10" class="node" pointer-events="visible" data-name="I8">
+
+<text text-anchor="start" x="430.68" y="-484.04" font-family="Times New Roman" font-weight="bold" font-size="12.00">8</text>
+<text text-anchor="start" x="402.68" y="-461.04" font-family="Times New Roman" font-size="12.00">S → bTS • a</text>
+<polygon fill="none" stroke="black" points="397.68,-452.84 397.68,-498.84 469.68,-498.84 469.68,-452.84 397.68,-452.84"/>
+</g>
+<!-- I7&#45;&gt;I8 -->
+<g id="edge12" class="edge" data-name="I7-&gt;I8">
+
+<path fill="none" stroke="black" d="M346.85,-463.84C357.05,-465.26 368.07,-466.8 378.69,-468.29"/>
+<polygon fill="black" stroke="black" points="378.13,-471.75 388.52,-469.66 379.1,-464.81 378.13,-471.75"/>
+<text text-anchor="middle" x="368.34" y="-470.44" font-family="Times New Roman" font-size="12.00">S</text>
+</g>
+<!-- I9 -->
+<g id="node11" class="node" pointer-events="visible" data-name="I9">
+
+<text text-anchor="start" x="563.01" y="-485.04" font-family="Times New Roman" font-weight="bold" font-size="12.00">9</text>
+<text text-anchor="start" x="536.51" y="-462.04" font-family="Times New Roman" font-size="12.00">S → bTSa •</text>
+<polygon fill="none" stroke="black" stroke-width="3" points="530.51,-453.34 530.51,-500.34 600.51,-500.34 600.51,-453.34 530.51,-453.34"/>
+</g>
+<!-- I8&#45;&gt;I9 -->
+<g id="edge13" class="edge" data-name="I8-&gt;I9">
+
+<path fill="none" stroke="black" d="M477.55,-476.17C487.85,-476.25 499,-476.34 509.77,-476.42"/>
+<polygon fill="black" stroke="black" points="509.7,-479.92 519.72,-476.5 509.75,-472.92 509.7,-479.92"/>
+<text text-anchor="middle" x="499.34" y="-479.44" font-family="Times New Roman" font-size="12.00">a</text>
+</g>
+<!-- I11&#45;&gt;I4 -->
+<g id="edge21" class="edge" data-name="I11-&gt;I4">
+
+<path fill="none" stroke="black" d="M691.75,-224.01C684.65,-167.82 664.87,-85.99 610.01,-41.84 533.64,19.61 480.71,4.53 389.68,-31.84 370.53,-39.49 354.92,-54.22 342.53,-70.77"/>
+<polygon fill="black" stroke="black" points="339.72,-68.68 336.84,-78.88 345.45,-72.7 339.72,-68.68"/>
+<text text-anchor="middle" x="499.34" y="-4.44" font-family="Times New Roman" font-size="12.00">b</text>
+</g>
+<!-- I11&#45;&gt;I6 -->
+<g id="edge22" class="edge" data-name="I11-&gt;I6">
+
+<path fill="none" stroke="black" d="M653.07,-296.05C642.49,-299.08 631.02,-302.36 619.99,-305.52"/>
+<polygon fill="black" stroke="black" points="619.27,-302.09 610.62,-308.21 621.19,-308.82 619.27,-302.09"/>
+<text text-anchor="middle" x="631.34" y="-305.44" font-family="Times New Roman" font-size="12.00">a</text>
+</g>
+<!-- I12 -->
+<g id="node14" class="node" pointer-events="visible" data-name="I12">
+
+<text text-anchor="start" x="822.01" y="-292.04" font-family="Times New Roman" font-weight="bold" font-size="12.00">12</text>
+<text text-anchor="start" x="796.68" y="-269.04" font-family="Times New Roman" font-size="12.00">T → aST • b</text>
+<polygon fill="none" stroke="black" points="792.01,-260.84 792.01,-306.84 864.01,-306.84 864.01,-260.84 792.01,-260.84"/>
+</g>
+<!-- I11&#45;&gt;I12 -->
+<g id="edge23" class="edge" data-name="I11-&gt;I12">
+
+<path fill="none" stroke="black" d="M740.39,-283.84C750.87,-283.84 762.23,-283.84 773.16,-283.84"/>
+<polygon fill="black" stroke="black" points="772.84,-287.34 782.84,-283.84 772.84,-280.34 772.84,-287.34"/>
+<text text-anchor="middle" x="762.35" y="-287.44" font-family="Times New Roman" font-size="12.00">T</text>
+</g>
+<!-- I13 -->
+<g id="node15" class="node" pointer-events="visible" data-name="I13">
+
+<text text-anchor="start" x="952.01" y="-292.04" font-family="Times New Roman" font-weight="bold" font-size="12.00">13</text>
+<text text-anchor="start" x="926.68" y="-269.04" font-family="Times New Roman" font-size="12.00">T → aSTb • </text>
+<polygon fill="none" stroke="black" points="922.01,-260.84 922.01,-306.84 994.01,-306.84 994.01,-260.84 922.01,-260.84"/>
+</g>
+<!-- I12&#45;&gt;I13 -->
+<g id="edge24" class="edge" data-name="I12-&gt;I13">
+
+<path fill="none" stroke="black" d="M871.99,-283.84C881.91,-283.84 892.59,-283.84 902.92,-283.84"/>
+<polygon fill="black" stroke="black" points="902.85,-287.34 912.85,-283.84 902.85,-280.34 902.85,-287.34"/>
+<text text-anchor="middle" x="893.01" y="-287.44" font-family="Times New Roman" font-size="12.00">b</text>
+</g>
+</g>
+</svg>

@@ -1,0 +1,44 @@
+digraph LR0 {
+  rankdir=LR;
+  splines=true;
+
+  node [shape=circle, fontname="Times New Roman", fontsize=12];
+  edge [fontname="Times New Roman", fontsize=12];
+
+  start [shape=point, label=""];
+  start -> 0;
+
+  4 [shape=doublecircle];
+  7 [shape=doublecircle];
+  8 [shape=doublecircle];
+  10 [shape=doublecircle];
+
+  0 -> 1 [label="a"];
+  0 -> 2 [label="b"];
+
+  1 -> 4 [label="b"];
+
+  2 -> 5 [label="a"];
+  2 -> 6 [label="b"];
+
+  4 -> 7 [label="a"];
+  4 -> 6 [label="b"];
+
+  5 -> 1 [label="a"];
+  5 -> 8 [label="b"];
+
+  6 -> 5 [label="a"];
+  6 -> 9 [label="b"];
+
+  7 -> 7 [label="a"];
+  7 -> 10 [label="b"];
+
+  8 -> 7 [label="a"];
+  8 -> 6 [label="b"];
+
+  9 -> 5 [label="a"];
+  9 -> 9 [label="b"];
+
+  10 -> 7 [label="a"];
+  10 -> 9 [label="b"];
+}
