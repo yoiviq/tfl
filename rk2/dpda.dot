@@ -1,8 +1,7 @@
 digraph DPDA {
   rankdir=LR;
-  node [shape=doublecircle]; 4;
+  node [shape=doublecircle]; 0; 1; 2;
   node [shape=circle];
-  S -> 0 [label="ε, ε/X"]
 
   0 -> 1 [label="a, ε/a"]
   0 -> 0 [label="b"]
@@ -13,11 +12,5 @@ digraph DPDA {
   2 -> 2 [label= "b, a/ε"]
   2 -> 2 [label="a"]
 
-  2 -> 4 [label="$, a/ε"]
-  4 -> 4 [label="ε, a/ε"]
-  2 -> 4 [label="$, X/ε"]
-  4 -> 4 [label="ε, X/ε"]
 
-  1 -> 4 [label="$"]
-  0 -> 4 [label="$"]
 }
