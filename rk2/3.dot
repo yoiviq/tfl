@@ -1,0 +1,50 @@
+digraph NPDA {
+  rankdir=LR;
+  node [shape=circle, fontsize=12];
+  
+  q
+  q0;
+  ABA1; ABA2; ABA3;
+  ASA_start;
+  Asa;
+  asA;
+  S_done;
+  SAAS_start;
+  sAas;
+  saAs;
+  end [shape=doublecircle];
+
+  q -> q0 [label="ε, ε/Q"]
+
+  q0 -> ABA1     [label="ε, ε/ε "];
+  q0 -> ASA_start [label="ε, ε/ε"];
+  q0 -> q0        [label="ε, ε/SAAS"];
+
+  ABA1 -> ABA2 [label="a, ε/ε"];
+  ABA2 -> ABA3 [label="b, ε/ε"];
+  ABA3 -> S_done [label="a, ε/ε"];
+
+  ASA_start -> Asa [label="ε, ε/#"];
+
+  Asa -> Asa [label="b, ε/X"];
+  Asa -> Asa [label="a, ε/ε"];
+  Asa -> q0          [label="a, ε/ASA"];
+
+  S_done -> asA [label="ε, ASA/ε"];
+  S_done -> SAAS_start  [label="ε, SAAS/ε"];
+  S_done -> end      [label="ε, Q/ε"];
+
+  asA -> asA [label="b, X/ε"];
+  asA -> asA [label="a, ε/ε"];
+  asA -> S_done      [label="a, #/ε"];
+
+  SAAS_start -> sAas [label="ε, ε/#"];
+
+  sAas -> sAas [label="b, ε/X"];
+  sAas -> sAas [label="a, ε/ε"];
+  sAas -> saAs  [label="a, ε/ε"];
+
+  saAs -> saAs [label="b, X/ε"];
+  saAs -> saAs [label="a, ε/ε"];
+  saAs -> q0         [label="a, #/ε"];
+}
