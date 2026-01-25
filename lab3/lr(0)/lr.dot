@@ -1,0 +1,171 @@
+digraph G {
+  rankdir=LR;
+  splines=true;
+  node [shape=plaintext, fontname="Times New Roman", fontsize=12];
+  edge [fontname="Times New Roman", fontsize=12];
+
+  I0 [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="4">
+      <TR><TD ALIGN="CENTER"><B>0</B></TD></TR>
+      <TR><TD ALIGN="LEFT"> &bull; S</TD></TR>
+      <TR><TD ALIGN="LEFT">S &rarr; &bull; bTSa</TD></TR>
+      <TR><TD ALIGN="LEFT">S &rarr; &bull; ab</TD></TR>
+    </TABLE>
+  >];
+
+  I [label=<
+    <TABLE BORDER="3" CELLBORDER="0" CELLSPACING="0" CELLPADDING="4">
+      <TR><TD ALIGN="CENTER"><B>S</B></TD></TR>
+      <TR><TD ALIGN="LEFT">S &bull;</TD></TR>
+    </TABLE>
+  >]; 
+
+  I0 -> I [label="S"]
+
+  I1 [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="4">
+      <TR><TD ALIGN="CENTER"><B>1</B></TD></TR>
+      <TR><TD ALIGN="LEFT">S &rarr; a &bull; b</TD></TR>
+    </TABLE>
+  >];
+
+  I0 -> I1 [label="a"];
+
+    I2 [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="4">
+      <TR><TD ALIGN="CENTER"><B>2</B></TD></TR>
+      <TR><TD ALIGN="LEFT">S &rarr; b &bull; TSa</TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; &bull; aSTb</TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; &bull; bT</TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; &bull; bb</TD></TR>
+    </TABLE>
+  >];
+
+  I0 -> I2 [label="b"]
+
+    I3 [label=<
+    <TABLE BORDER="3" CELLBORDER="0" CELLSPACING="0" CELLPADDING="4">
+      <TR><TD ALIGN="CENTER"><B>3</B></TD></TR>
+      <TR><TD ALIGN="LEFT">S &rarr; ab &bull; </TD></TR>
+    </TABLE>
+  >];
+
+  I1 -> I3 [label="b"]
+
+    I4 [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="4">
+      <TR><TD ALIGN="CENTER"><B>4</B></TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; b &bull; T</TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; b &bull; b</TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; &bull; aSTb</TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; &bull; bT</TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; &bull; bb</TD></TR>
+    </TABLE>
+  >];
+
+  I2 -> I4 [label="b"]
+
+  I5 [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="4">
+      <TR><TD ALIGN="CENTER"><B>5</B></TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; bb &bull;</TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; b &bull; T</TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; b &bull; b</TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; &bull; aSTb</TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; &bull; bT</TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; &bull; bb</TD></TR>
+    </TABLE>
+  >];
+
+  I4 -> I5 [label="b"]
+  I5 -> I5 [label="b"]
+
+  I6 [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="4">
+      <TR><TD ALIGN="CENTER"><B>6</B></TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; a &bull; STb</TD></TR>
+      <TR><TD ALIGN="LEFT">S &rarr; &bull; ab</TD></TR>
+      <TR><TD ALIGN="LEFT">S &rarr; &bull; bTSa</TD></TR>
+    </TABLE>
+  >];
+
+  I2 -> I6 [label="a"]
+
+    I7 [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="4">
+      <TR><TD ALIGN="CENTER"><B>7</B></TD></TR>
+      <TR><TD ALIGN="LEFT">S &rarr; bT &bull; Sa</TD></TR>
+      <TR><TD ALIGN="LEFT">S &rarr; &bull; ab</TD></TR>
+      <TR><TD ALIGN="LEFT">S &rarr; &bull; bTSa</TD></TR>
+    </TABLE>
+  >];
+
+  I2 -> I7 [label="T"]
+  I7 -> I1 [label="a"]
+  I7 -> I2 [label="b"]
+
+    I8 [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="4">
+      <TR><TD ALIGN="CENTER"><B>8</B></TD></TR>
+      <TR><TD ALIGN="LEFT">S &rarr; bTS &bull; a</TD></TR>
+    </TABLE>
+  >];
+
+  I7 -> I8 [label="S"]
+
+    I9 [label=<
+    <TABLE BORDER="3" CELLBORDER="0" CELLSPACING="0" CELLPADDING="4">
+      <TR><TD ALIGN="CENTER"><B>9</B></TD></TR>
+      <TR><TD ALIGN="LEFT">S &rarr; bTSa &bull;</TD></TR>
+    </TABLE>
+  >];
+
+  I8 -> I9 [label="a"]
+  
+    I10 [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="4">
+      <TR><TD ALIGN="CENTER"><B>10</B></TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; bT &bull;</TD></TR>
+    </TABLE>
+  >];
+
+  I4 -> I6 [label="a"]
+  I4 -> I10 [label="T"]
+  I5 -> I10 [label="T"]
+  I5 -> I6 [label="a"]
+
+  I6 -> I1 [label="a"]
+  I6 -> I2 [label="b"]
+
+  I11 [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="4">
+      <TR><TD ALIGN="CENTER"><B>11</B></TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; aS &bull; Tb</TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; &bull; bb</TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; &bull; aSTb</TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; &bull; bT</TD></TR>
+    </TABLE>
+  >];
+
+  I6 -> I11 [label="S"]
+  I11 -> I4 [label="b"]
+  I11 -> I6 [label="a"]
+
+  I12 [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="4">
+      <TR><TD ALIGN="CENTER"><B>12</B></TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; aST &bull; b</TD></TR>
+    </TABLE>
+  >];
+
+  I11 -> I12 [label="T"]
+
+  I13 [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="4">
+      <TR><TD ALIGN="CENTER"><B>13</B></TD></TR>
+      <TR><TD ALIGN="LEFT">T &rarr; aSTb &bull; </TD></TR>
+    </TABLE>
+  >];
+
+  I12 -> I13 [label="b"]
+}

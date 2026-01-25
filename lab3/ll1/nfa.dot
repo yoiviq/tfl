@@ -1,0 +1,46 @@
+digraph NFA {
+    rankdir=LR;
+    node [shape=circle, fontsize=12];
+
+    start [shape=point, label=""];
+    b3 [shape=doublecircle]
+    a1 [shape=doublecircle]
+
+    start -> q0
+
+    q0 -> b1 [label="b"]
+    q0 -> a3 [label="a"]
+
+    b1 -> a2 [label="a"]
+    b1 -> b4 [label="b"]
+    b1 -> b5 [label="b"]
+
+    a3 -> b3 [label="b"]
+
+    a2 -> b1 [label="b"]
+    a2 -> a3 [label="a"]
+
+    b4 -> b4 [label="b"]
+    b4 -> b5 [label="b"]
+    b4 -> a2 [label="a"]
+
+    b3 -> a1 [label="a"]
+    b3 -> a2 [label="a"]
+    b3 -> b4 [label="b"]
+    b3 -> b5 [label="b"]
+
+    b5 -> b6 [label="b"]
+
+    b2 -> b1 [label="b"]
+    b2 -> b2 [label="b"]
+    b2 -> a3 [label="a"]
+
+    a1 -> a1 [label="a"]
+    a1 -> b4 [label="b"]
+    a1 -> b5 [label="b"]
+
+    b6 -> b1 [label="b"]
+    b6 -> a3 [label="a"]
+    b6 -> b2 [label="b"]
+
+}
